@@ -23,3 +23,8 @@ use_news_md()
 
 # Use git ------------------------------------------------------------
 use_git()
+
+# Setup Documentation
+usethis::use_pkgdown()
+
+
