@@ -27,4 +27,6 @@ use_git()
 # Setup Documentation
 usethis::use_pkgdown()
 
-
+# Git Rstudio Settings
+C:/Users/marqu/AppData/Local/GitHubDesktop/app-1.2.3/resources/app/git/mingw64/bin/git.exe
+C:\Program Files\Git\mingw64\bin
