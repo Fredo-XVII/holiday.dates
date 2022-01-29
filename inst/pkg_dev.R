@@ -24,6 +24,11 @@ use_news_md()
 # Use git ------------------------------------------------------------
 use_git()
 
+# Add new functions
+usethis::use_r('holiday_data')
+usethis::use_r('add_holidays')
+
+
 # Setup Documentation
 usethis::use_pkgdown()
 
