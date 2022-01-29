@@ -6,6 +6,9 @@
 
 The goal of holiday.dates is to ...
 
+## Git Pages
+[GitPages](https://fredo-xvii.github.io/holiday.dates/)
+
 ## Installation
 
 You can install the development version of holiday.dates like so:
