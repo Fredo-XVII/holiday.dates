@@ -12,16 +12,6 @@
 #'
 #'
 
-
-## Supporting Functions -------------------------------------------------------
-
-### Creates a vector of holiday names the same length as the holiday dates vector.
-#' @export
-#' @param name <character> Name of the holiday represented by the holiday_dates vector.
-#' @param holiday_dates <Dates> A vector of dates representing the holiday.
-#' @rdname add_holidays
-Holiday_Names <- function(name, holiday_dates) {rep(name,length(holiday_dates))}
-
 ## New Retail Holiday Functions not in timeDate -------------------------------
 
 #' @export
