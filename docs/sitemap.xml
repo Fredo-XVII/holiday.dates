@@ -19,6 +19,15 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/add_holidays.html</loc>
+  </url>
+  <url>
+    <loc>/reference/holiday_data.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/pipe.html</loc>
   </url>
 </urlset>

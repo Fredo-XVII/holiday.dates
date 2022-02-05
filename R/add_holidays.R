@@ -10,12 +10,21 @@
 #' name of the function. For example, `USValentinesDay()` will provide the dates
 #' for valentines day in the US when passed a vector of years.
 #'
+#' @import timeDate
 #'
+#' @examples
+#' {
+#' # Individual Holidays
+#' library(holiday.dates)
+#' years <- seq(2015,2020, by = 1)
+#' US_ValentinesDay <- USValentinesDay(years) %>% as.Date()
+#' Name_Valentines <- Holiday_Names("ValentinesDay",US_ValentinesDay)
+#' }
 
 ## New Retail Holiday Functions not in timeDate -------------------------------
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USValentinesDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
@@ -23,7 +32,7 @@ USValentinesDay <-
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USSuperBowl <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
@@ -31,7 +40,7 @@ USSuperBowl <-
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USSaintPatricksDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
@@ -39,7 +48,7 @@ USSaintPatricksDay <-
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USMothersDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
@@ -47,7 +56,7 @@ USMothersDay <-
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USFathersDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
@@ -55,7 +64,7 @@ USFathersDay <-
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USHalloweenDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
@@ -63,7 +72,7 @@ USHalloweenDay <-
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USCyberMonday <- function(year) { as.Date(timeDate::USThanksgivingDay(year)) + 4 }
 
@@ -72,7 +81,7 @@ USCyberMonday <- function(year) { as.Date(timeDate::USThanksgivingDay(year)) + 4
 ## New Federal Holidays not in timeDate ---------------------------------------
 
 #' @export
-#' @param year <numeric> A vector of year integers.
+#' @param year `numeric` A vector of year integers.
 #' @rdname add_holidays
 USJuneteenthDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {

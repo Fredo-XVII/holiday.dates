@@ -26,20 +26,20 @@
 #' @importFrom  tibble tibble
 #' @importFrom lubridate year wday floor_date ceiling_date
 #' @importFrom rlang .data
-#' @export
+#' @importFrom magrittr %>%
+#'
 #' @examples
 #' \dontrun{
+#' # Holiday dates in a dataframe
+#' library(holiday.dates)
 #' weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'),
 #' as.Date('2020-01-01'), by = 'week'))
 #' holidays_weeks(df = weeks_df) %>% head(10)
-#'
-#' ## Individual Holidays
-#' years <- seq(2015,2020, by = 1)
-#' US_ValentinesDay <- USValentinesDay(years) %>% as.Date()
-#' Name_Valentines <- Holiday_Names("ValentinesDay",US_ValentinesDay)
 #' }
-#' @param df <dataframe> A dataframe with 1 date column with at least 2 dates.
-#' @param out_df <character> `weeks` is the default, but can also use `days`
+#'
+#' @export
+#' @param df `dataframe` A dataframe with 1 date column with at least 2 dates.
+#' @param out_df `character` `weeks` is the default, but can also use `days`.
 #' @rdname holiday_data
 
 ## Main Holiday Data Function -------------------------------------------------
@@ -185,10 +185,10 @@ holiday_data <- function(df, out_df = c('weeks','days')) {
 
 ### Creates a vector of holiday names the same length as the holiday dates vector.
 #' @export
-#' @param name <character> Name of the holiday represented by the holiday_dates vector.
-#' @param holiday_dates <Dates> A vector of dates representing the holiday.
+#' @param name `character` Name of the holiday represented by the holiday_dates vector.
+#' @param holiday_dates `Dates` A vector of dates representing the holiday.
 #' @rdname add_holidays
 
 Holiday_Names <- function(name, holiday_dates) {rep(name,length(holiday_dates))}
 
-##
+## Supporting Functions -------------------------------------------------------

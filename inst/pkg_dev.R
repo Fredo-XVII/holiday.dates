@@ -1,5 +1,5 @@
 library(usethis)
-
+library(purrr)
 ## In separate new project
 # Create a new package -------------------------------------------------
 pkg_path <- file.path('C:/Users/marqu/OneDrive/Documents/GitHub', "holiday.dates")
@@ -8,11 +8,17 @@ usethis::create_package(pkg_path)
 
 ## In side of the new package project
 # Modify the description ----------------------------------------------
-use_mit_license("My Name")
+usethis::use_mit_license("Alfredo Marquez")
 
+## Add dependency packages
+pkgs_import <- c("timeDate","dplyr","tidyr","tibble","lubridate","rlang")
 
-use_package("MASS", "Suggests")
+purrr::map(pkgs_import, usethis::use_package, type = "Import")
 
+pkgs_suggest <- c("lubridate","rlang")
+purrr::map(pkgs_import, usethis::use_package, type = "Suggests")
+
+usethis::use_pipe()
 
 # Set up other files -------------------------------------------------
 usethis::use_readme_rmd()
@@ -24,14 +30,16 @@ use_news_md()
 # Use git ------------------------------------------------------------
 use_git()
 
-# Add new functions
+# Add new functions --------------------------------------------------
 usethis::use_r('holiday_data')
 usethis::use_r('add_holidays')
 
 
-# Setup Documentation
+# Setup Documentation ------------------------------------------------
 usethis::use_pkgdown()
+pkgdown::build_site()
 
 # Git Rstudio Settings
-C:/Users/marqu/AppData/Local/GitHubDesktop/app-1.2.3/resources/app/git/mingw64/bin/git.exe
-C:\Program Files\Git\mingw64\bin
+
+#C:/Users/marqu/AppData/Local/GitHubDesktop/app-1.2.3/resources/app/git/mingw64/bin/git.exe
+#C:\Program Files\Git\mingw64\bin
