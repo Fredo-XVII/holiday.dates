@@ -34,7 +34,7 @@
 #' library(holiday.dates)
 #' weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'),
 #' as.Date('2020-01-01'), by = 'week'))
-#' holidays_weeks(df = weeks_df) %>% head(10)
+#' holiday_data(df = weeks_df) %>% head(10)
 #' }
 #'
 #' @export

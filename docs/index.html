@@ -58,26 +58,67 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of holiday.dates is to …</p>
-<div class="section level2">
-<h2 id="git-pages">Git Pages<a class="anchor" aria-label="anchor" href="#git-pages"></a>
-</h2>
-<p><a href="https://fredo-xvii.github.io/holiday.dates/" class="external-link">GitPages</a></p>
-</div>
+<p>The goal of holiday.dates is to create a data frame with holiday dates flagged in a dataframe. The user has options for the output data frame to be either the days or weeks between 2 days. A column of dates can also be passed to the function, but it will only use the first and last dates to build the holiday data frame.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install the development version of holiday.dates like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org" class="external-link">remotes</a></span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Fredo-XVII/holiday.dates"</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>Below you will an example for holidays associated with days. Notice that in this output you get the calendar date as well as the week begin date and the week end date.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">holiday.dates</span><span class="op">)</span>
+
+<span class="va">days_df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>weeks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.Date.html" class="external-link">seq.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">'2015-01-01'</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">'2020-01-01'</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">'day'</span><span class="op">)</span><span class="op">)</span>
+
+<span class="fu"><a href="reference/holiday_data.html">holiday_data</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">days_df</span>, out_df <span class="op">=</span> <span class="st">"days"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>
+<span class="co">#&gt; Joining, by = c("greg_d", "day_n", "wk_beg_d", "wk_end_d")</span>
+<span class="co">#&gt; Adding missing grouping variables: `wk_end_d`</span>
+<span class="co">#&gt; Joining, by = c("wk_beg_d", "wk_end_d")</span>
+<span class="co">#&gt; # A tibble: 10 x 6</span>
+<span class="co">#&gt;    calendar_d day_n fiscal_week_beg~ fiscal_week_end~ holiday_names holiday_flag</span>
+<span class="co">#&gt;    &lt;date&gt;     &lt;ord&gt; &lt;date&gt;           &lt;date&gt;           &lt;chr&gt;                &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2015-01-01 Thu   2014-12-28       2015-01-03       NewYearsDay              1</span>
+<span class="co">#&gt;  2 2015-01-02 Fri   2014-12-28       2015-01-03       NoHoliday                0</span>
+<span class="co">#&gt;  3 2015-01-03 Sat   2014-12-28       2015-01-03       NoHoliday                0</span>
+<span class="co">#&gt;  4 2015-01-04 Sun   2015-01-04       2015-01-10       NoHoliday                0</span>
+<span class="co">#&gt;  5 2015-01-05 Mon   2015-01-04       2015-01-10       NoHoliday                0</span>
+<span class="co">#&gt;  6 2015-01-06 Tue   2015-01-04       2015-01-10       NoHoliday                0</span>
+<span class="co">#&gt;  7 2015-01-07 Wed   2015-01-04       2015-01-10       NoHoliday                0</span>
+<span class="co">#&gt;  8 2015-01-08 Thu   2015-01-04       2015-01-10       NoHoliday                0</span>
+<span class="co">#&gt;  9 2015-01-09 Fri   2015-01-04       2015-01-10       NoHoliday                0</span>
+<span class="co">#&gt; 10 2015-01-10 Sat   2015-01-04       2015-01-10       NoHoliday                0</span></code></pre></div>
+<p>In this example you will see that output for when the <code>out_df = "week"</code>. It is the aggregation of the days dataframe up to the week level. You can see how the first row relates to the first 7 rows in the data frame above.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">holiday.dates</span><span class="op">)</span>
-<span class="co">## basic example code</span></code></pre></div>
+
+<span class="va">weeks_df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span>weeks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.Date.html" class="external-link">seq.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">'2015-01-01'</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">'2020-01-01'</span><span class="op">)</span>, by <span class="op">=</span> <span class="st">'week'</span><span class="op">)</span><span class="op">)</span>
+
+<span class="fu"><a href="reference/holiday_data.html">holiday_data</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">weeks_df</span>, out_df <span class="op">=</span> <span class="st">"week"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>
+<span class="co">#&gt; Joining, by = c("greg_d", "day_n", "wk_beg_d", "wk_end_d")</span>
+<span class="co">#&gt; Adding missing grouping variables: `wk_end_d`</span>
+<span class="co">#&gt; Joining, by = c("wk_beg_d", "wk_end_d")</span>
+<span class="co">#&gt; # A tibble: 10 x 4</span>
+<span class="co">#&gt; # Groups:   fiscal_week_begin_d [10]</span>
+<span class="co">#&gt;    fiscal_week_begin_d fiscal_week_end_d holiday_names holiday_flag</span>
+<span class="co">#&gt;    &lt;date&gt;              &lt;date&gt;            &lt;chr&gt;                &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 2014-12-28          2015-01-03        NewYearsDay              1</span>
+<span class="co">#&gt;  2 2015-01-04          2015-01-10        NoHoliday                0</span>
+<span class="co">#&gt;  3 2015-01-11          2015-01-17        NoHoliday                0</span>
+<span class="co">#&gt;  4 2015-01-18          2015-01-24        MlkDay                   1</span>
+<span class="co">#&gt;  5 2015-01-25          2015-01-31        NoHoliday                0</span>
+<span class="co">#&gt;  6 2015-02-01          2015-02-07        SuperBowl                1</span>
+<span class="co">#&gt;  7 2015-02-08          2015-02-14        ValentinesDay            1</span>
+<span class="co">#&gt;  8 2015-02-15          2015-02-21        NoHoliday                0</span>
+<span class="co">#&gt;  9 2015-02-22          2015-02-28        NoHoliday                0</span>
+<span class="co">#&gt; 10 2015-03-01          2015-03-07        NoHoliday                0</span></code></pre></div>
+<p><strong>NOTE:</strong> For those days/weels when there is no holiday the value for holiday name field is <code>NoHoliday</code>.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">

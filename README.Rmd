@@ -18,7 +18,10 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of holiday.dates is to ...
+The goal of holiday.dates is to create a data frame with holiday dates flagged in
+a dataframe.  The user has options for the output data frame to be either the days
+or weeks between 2 days.  A column of dates can also be passed to the function, 
+but it will only use the first and last dates to build the holiday data frame.
 
 ## Installation
 
@@ -26,19 +29,34 @@ You can install the development version of holiday.dates like so:
 
 ``` r
 library(remotes)
-remotes::install_github("holiday.dates")
+remotes::install_github("Fredo-XVII/holiday.dates")
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
+Below you will an example for holidays associated with days.  Notice that in this 
+output you get the calendar date as well as the week begin date and the week end 
+date.
 
+```{r}
+
+library(holiday.dates)
+
+days_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2020-01-01'), by = 'day'))
+
+holiday_data(df = days_df, out_df = "days") %>% head(10)
+```
+
+
+In this example you will see that output for when the `out_df = "week"`.  It is 
+the aggregation of the days dataframe up to the week level.  You can see how the
+first row relates to the first 7 rows in the data frame above.
 ```{r example}
 library(holiday.dates)
 
 weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2020-01-01'), by = 'week'))
 
-holidays_weeks(df = weeks_df) %>% head(10)
+holiday_data(df = weeks_df, out_df = "week") %>% head(10)
 ```
 
-
+**NOTE:** For those days/weels when there is no holiday the value for holiday name field is `NoHoliday`.
