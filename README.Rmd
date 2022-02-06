@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/Fredo-XVII/holiday.dates?branch=master&svg=true)](https://ci.appveyor.com/project/Fredo-XVII/holiday.dates)
 [![R-CMD-check](https://github.com/Fredo-XVII/holiday.dates/workflows/R-CMD-check/badge.svg)](https://github.com/Fredo-XVII/holiday.dates/actions)
+[![Github All Releases](https://img.shields.io/github/downloads/Fredo-XVII/holiday.dates/total.svg)]()
 <!-- badges: end -->
 
 The goal of holiday.dates is to create a data frame with holiday dates flagged in
