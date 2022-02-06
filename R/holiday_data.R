@@ -170,14 +170,9 @@ holiday_data <- function(df, out_df = c('weeks','days')) {
   # 2. Weekly dates with flag for holiday in that week
 
   if(out_df[[1]] == 'days') {
-    return(merge_holidays %>%
-             dplyr::rename(calendar_d = .data$greg_d,
-                           fiscal_week_begin_d = .data$wk_beg_d,
-                           fiscal_week_end_d = .data$wk_end_d))
+    return(merge_holidays)
   } else {
-    return(merge_wkly_holidays %>%
-             dplyr::rename(fiscal_week_begin_d = .data$wk_beg_d,
-                           fiscal_week_end_d = .data$wk_end_d))
+    return(merge_wkly_holidays)
   }
 }
 
