@@ -1,11 +1,12 @@
 Package: holiday.dates
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.9
+Version: 0.1.0
 Authors@R: 
     person("Alfredo", "Marquez", , "alfredo.g.marquez@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Creates a dataframe with the holidays for any period between 2 dates..
 License: MIT + file LICENSE
+Url: https://github.com/Fredo-XVII/holiday.dates
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1

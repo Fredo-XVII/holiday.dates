@@ -41,6 +41,7 @@ usethis::use_r('add_holidays')
 # Setup Documentation ------------------------------------------------
 usethis::use_pkgdown()
 pkgdown::build_site()
+usethis::use_pkgdown_github_pages()
 
 # Git Rstudio Settings
 
