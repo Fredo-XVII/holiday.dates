@@ -1,10 +1,10 @@
 Package: holiday.dates
-Title: What the Package Does (One Line, Title Case)
+Title: Builds Holiday Data
 Version: 0.1.0
 Authors@R: 
     person("Alfredo", "Marquez", , "alfredo.g.marquez@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Creates a dataframe with the holidays for any period between 2 dates..
+Description: Creates a dataframe with the holidays for any period between 2 dates.
 License: MIT + file LICENSE
 Url: https://github.com/Fredo-XVII/holiday.dates
 Encoding: UTF-8
