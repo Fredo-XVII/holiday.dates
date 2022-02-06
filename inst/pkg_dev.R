@@ -29,7 +29,9 @@ usethis::use_badge(badge_name, href, src)
 #use_test("my-test")
 
 # Use git ------------------------------------------------------------
-use_git()
+usethis::use_git()
+usethis::use_appveyor()
+usethis::use_github_actions()
 
 # Add new functions --------------------------------------------------
 usethis::use_r('holiday_data')
