@@ -5,6 +5,11 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/Fredo-XVII/RToolShed/workflows/R-CMD-check/badge.svg)](https://github.com/Fredo-XVII/holiday.dates/actions)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/Fredo-XVII/RToolShed?branch=master&svg=true)](https://ci.appveyor.com/project/Fredo-XVII/holiday.dates)
+
 <!-- badges: end -->
 
 The goal of holiday.dates is to create a data frame with holiday dates
@@ -12,6 +17,8 @@ flagged in a dataframe. The user has options for the output data frame
 to be either the days or weeks between 2 days. A column of dates can
 also be passed to the function, but it will only use the first and last
 dates to build the holiday data frame.
+
+[GitPage](https://fredo-xvii.github.io/holiday.dates/)
 
 ## Installation
 
@@ -22,7 +29,7 @@ library(remotes)
 remotes::install_github("Fredo-XVII/holiday.dates")
 ```
 
-## Example
+## Examples
 
 Below you will an example for holidays associated with days. Notice that
 in this output you get the calendar date as well as the week begin date

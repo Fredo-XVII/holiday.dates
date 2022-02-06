@@ -24,7 +24,7 @@ usethis::use_pipe()
 usethis::use_readme_rmd()
 usethis::use_readme_md()
 use_news_md()
-usethis::use_badge()
+usethis::use_badge(badge_name, href, src)
 
 #use_test("my-test")
 
