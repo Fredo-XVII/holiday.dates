@@ -9,6 +9,7 @@
 \alias{USFathersDay}
 \alias{USHalloweenDay}
 \alias{USCyberMonday}
+\alias{USBack2School}
 \alias{USJuneteenthDay}
 \alias{Holiday_Names}
 \title{Added Holidays}
@@ -26,6 +27,8 @@ USFathersDay(year = timeDate::getRmetricsOptions("currentYear"))
 USHalloweenDay(year = timeDate::getRmetricsOptions("currentYear"))
 
 USCyberMonday(year)
+
+USBack2School(year = timeDate::getRmetricsOptions("currentYear"))
 
 USJuneteenthDay(year = timeDate::getRmetricsOptions("currentYear"))
 

@@ -2,6 +2,7 @@
 
 export("%>%")
 export(Holiday_Names)
+export(USBack2School)
 export(USCyberMonday)
 export(USFathersDay)
 export(USHalloweenDay)
