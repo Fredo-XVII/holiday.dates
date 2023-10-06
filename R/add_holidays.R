@@ -81,7 +81,7 @@ USCyberMonday <- function(year) { as.Date(timeDate::USThanksgivingDay(year)) + 4
 #' @rdname add_holidays
 USBack2School <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(2023, 8, 7, 2)
+    ans = .nth.of.nday(year, 8, 7, 2)
     timeDate::timeDate(as.character(ans)) }
 
 ## New Retail Holiday Functions not in timeDate -------------------------------
