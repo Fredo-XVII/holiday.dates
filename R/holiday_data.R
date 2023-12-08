@@ -91,6 +91,12 @@ holiday_data <- function(df, out_df = c('weeks','days')) {
 
   US_Back2School <- USBack2School(years)%>% as.Date()
   Name_Back2School <- Holiday_Names("Back2School",US_Back2School)
+
+  US_Tgt_Cirle_Wk_Summer <- USTgt_Cirle_Wk_Summer(years)%>% as.Date()
+  Name_Tgt_Cirle_Wk_Summer <- Holiday_Names("TargetCircleWeek_Summer",US_Tgt_Cirle_Wk_Summer)
+
+  US_Tgt_Cirle_Wk_Fall <- USTgt_Cirle_Wk_Fall(years)%>% as.Date()
+  Name_Tgt_Cirle_Wk_Fall <- Holiday_Names("TargetCircleWeek_Fall",US_Tgt_Cirle_Wk_Fall)
   # Retail Holidays -----------------------------------------------------------
 
   # Federal Holidays ----------------------------------------------------------
@@ -133,8 +139,8 @@ holiday_data <- function(df, out_df = c('weeks','days')) {
   #holiday_vector <- paste(ls()[holiday_list], collapse = ",")
 
   # Combine the vectors for holiday dates and holidays into a tibble for left joining
-  holiday_dates <- c(US_Back2School,US_ChristmasDay,US_ChristmasEve,US_CyberMonday,US_Easter,US_EasterEve,US_FathersDay,US_HalloweenDay,US_IndependenceDay,US_Juneteenth,US_LaborDay,US_MemorialDay,US_MlkDay,US_MothersDay,US_NewYearsDay,US_NewYearsEve,US_SaintPatricksDay,US_SuperBowl,US_ThanksgivingDay,US_ValentinesDay,US_VeteransDay)
-  holiday_names <- c(Name_Back2School,Name_ChristmasDay,Name_ChristmasEve,Name_CyberMonday,Name_Easter,Name_EasterEve,Name_FathersDay,Name_HalloweenDay,Name_IndependenceDay,Name_Juneteenth,Name_LaborDay,Name_MemorialDay,Name_MlkDay,Name_MothersDay,Name_NewYearsDay,Name_NewYearsEve,Name_SaintPatricksDay,Name_SuperBowl,Name_ThanksgivingDay,Name_Valentines,Name_VeteransDay)
+  holiday_dates <- c(US_Back2School,US_ChristmasDay,US_ChristmasEve,US_CyberMonday,US_Easter,US_EasterEve,US_FathersDay,US_HalloweenDay,US_IndependenceDay,US_Juneteenth,US_LaborDay,US_MemorialDay,US_MlkDay,US_MothersDay,US_NewYearsDay,US_NewYearsEve,US_SaintPatricksDay,US_SuperBowl,US_ThanksgivingDay,US_ValentinesDay,US_VeteransDay, US_Tgt_Cirle_Wk_Summer, US_Tgt_Cirle_Wk_Fall)
+  holiday_names <- c(Name_Back2School,Name_ChristmasDay,Name_ChristmasEve,Name_CyberMonday,Name_Easter,Name_EasterEve,Name_FathersDay,Name_HalloweenDay,Name_IndependenceDay,Name_Juneteenth,Name_LaborDay,Name_MemorialDay,Name_MlkDay,Name_MothersDay,Name_NewYearsDay,Name_NewYearsEve,Name_SaintPatricksDay,Name_SuperBowl,Name_ThanksgivingDay,Name_Valentines,Name_VeteransDay, Name_Tgt_Cirle_Wk_Summer, Name_Tgt_Cirle_Wk_Fall)
   holiday_df <- tibble::tibble(holiday_dates, holiday_names) %>%
     dplyr::mutate(holiday_dates = as.Date(.data$holiday_dates))
   # ---------------------------------------------------------------------------

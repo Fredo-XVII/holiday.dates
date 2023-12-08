@@ -84,6 +84,22 @@ USBack2School <-
     ans = .nth.of.nday(year, 8, 7, 2)
     timeDate::timeDate(as.character(ans)) }
 
+#' @export
+#' @param year `numeric` A vector of year integers.
+#' @rdname add_holidays
+USTgt_Cirle_Wk_Summer <-
+  function(year = timeDate::getRmetricsOptions("currentYear")) {
+    ans = .nth.of.nday(year, 7, 7, 2)
+    timeDate::timeDate(as.character(ans)) }
+
+#' @export
+#' @param year `numeric` A vector of year integers.
+#' @rdname add_holidays
+USTgt_Cirle_Wk_Fall <-
+  function(year = timeDate::getRmetricsOptions("currentYear")) {
+    ans = .nth.of.nday(year, 10, 7, 1)
+    timeDate::timeDate(as.character(ans)) }
+
 ## New Retail Holiday Functions not in timeDate -------------------------------
 
 ## New Federal Holidays not in timeDate ---------------------------------------

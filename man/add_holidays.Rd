@@ -10,6 +10,8 @@
 \alias{USHalloweenDay}
 \alias{USCyberMonday}
 \alias{USBack2School}
+\alias{USTgt_Cirle_Wk_Summer}
+\alias{USTgt_Cirle_Wk_Fall}
 \alias{USJuneteenthDay}
 \alias{Holiday_Names}
 \title{Added Holidays}
@@ -29,6 +31,10 @@ USHalloweenDay(year = timeDate::getRmetricsOptions("currentYear"))
 USCyberMonday(year)
 
 USBack2School(year = timeDate::getRmetricsOptions("currentYear"))
+
+USTgt_Cirle_Wk_Summer(year = timeDate::getRmetricsOptions("currentYear"))
+
+USTgt_Cirle_Wk_Fall(year = timeDate::getRmetricsOptions("currentYear"))
 
 USJuneteenthDay(year = timeDate::getRmetricsOptions("currentYear"))
 
