@@ -39,25 +39,25 @@ and the week end date.
 
 library(holiday.dates)
 
-days_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2020-01-01'), by = 'day'))
+days_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2025-01-01'), by = 'day'))
 
 holiday_data(df = days_df, out_df = "days") %>% head(10)
-#> Joining, by = c("greg_d", "day_n", "wk_beg_d", "wk_end_d")
+#> Joining with `by = join_by(greg_d, day_n, wk_beg_d, wk_end_d)`
 #> Adding missing grouping variables: `wk_end_d`
-#> Joining, by = c("wk_beg_d", "wk_end_d")
-#> # A tibble: 10 x 6
-#>    calendar_d day_n fiscal_week_beg~ fiscal_week_end~ holiday_names holiday_flag
-#>    <date>     <ord> <date>           <date>           <chr>                <dbl>
-#>  1 2015-01-01 Thu   2014-12-28       2015-01-03       NewYearsDay              1
-#>  2 2015-01-02 Fri   2014-12-28       2015-01-03       NoHoliday                0
-#>  3 2015-01-03 Sat   2014-12-28       2015-01-03       NoHoliday                0
-#>  4 2015-01-04 Sun   2015-01-04       2015-01-10       NoHoliday                0
-#>  5 2015-01-05 Mon   2015-01-04       2015-01-10       NoHoliday                0
-#>  6 2015-01-06 Tue   2015-01-04       2015-01-10       NoHoliday                0
-#>  7 2015-01-07 Wed   2015-01-04       2015-01-10       NoHoliday                0
-#>  8 2015-01-08 Thu   2015-01-04       2015-01-10       NoHoliday                0
-#>  9 2015-01-09 Fri   2015-01-04       2015-01-10       NoHoliday                0
-#> 10 2015-01-10 Sat   2015-01-04       2015-01-10       NoHoliday                0
+#> Joining with `by = join_by(wk_beg_d, wk_end_d)`
+#> # A tibble: 10 × 6
+#>    greg_d     day_n wk_beg_d   wk_end_d   holiday_names holiday_flag
+#>    <date>     <ord> <date>     <date>     <chr>                <dbl>
+#>  1 2015-01-01 Thu   2014-12-28 2015-01-03 NewYearsDay              1
+#>  2 2015-01-02 Fri   2014-12-28 2015-01-03 NoHoliday                0
+#>  3 2015-01-03 Sat   2014-12-28 2015-01-03 NoHoliday                0
+#>  4 2015-01-04 Sun   2015-01-04 2015-01-10 NoHoliday                0
+#>  5 2015-01-05 Mon   2015-01-04 2015-01-10 NoHoliday                0
+#>  6 2015-01-06 Tue   2015-01-04 2015-01-10 NoHoliday                0
+#>  7 2015-01-07 Wed   2015-01-04 2015-01-10 NoHoliday                0
+#>  8 2015-01-08 Thu   2015-01-04 2015-01-10 NoHoliday                0
+#>  9 2015-01-09 Fri   2015-01-04 2015-01-10 NoHoliday                0
+#> 10 2015-01-10 Sat   2015-01-04 2015-01-10 NoHoliday                0
 ```
 
 In this example you will see that output for when the `out_df = "week"`.
@@ -68,26 +68,26 @@ above.
 ``` r
 library(holiday.dates)
 
-weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2020-01-01'), by = 'week'))
+weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2025-01-01'), by = 'week'))
 
 holiday_data(df = weeks_df, out_df = "week") %>% head(10)
-#> Joining, by = c("greg_d", "day_n", "wk_beg_d", "wk_end_d")
+#> Joining with `by = join_by(greg_d, day_n, wk_beg_d, wk_end_d)`
 #> Adding missing grouping variables: `wk_end_d`
-#> Joining, by = c("wk_beg_d", "wk_end_d")
-#> # A tibble: 10 x 4
-#> # Groups:   fiscal_week_begin_d [10]
-#>    fiscal_week_begin_d fiscal_week_end_d holiday_names holiday_flag
-#>    <date>              <date>            <chr>                <dbl>
-#>  1 2014-12-28          2015-01-03        NewYearsDay              1
-#>  2 2015-01-04          2015-01-10        NoHoliday                0
-#>  3 2015-01-11          2015-01-17        NoHoliday                0
-#>  4 2015-01-18          2015-01-24        MlkDay                   1
-#>  5 2015-01-25          2015-01-31        NoHoliday                0
-#>  6 2015-02-01          2015-02-07        SuperBowl                1
-#>  7 2015-02-08          2015-02-14        ValentinesDay            1
-#>  8 2015-02-15          2015-02-21        NoHoliday                0
-#>  9 2015-02-22          2015-02-28        NoHoliday                0
-#> 10 2015-03-01          2015-03-07        NoHoliday                0
+#> Joining with `by = join_by(wk_beg_d, wk_end_d)`
+#> # A tibble: 10 × 4
+#> # Groups:   wk_beg_d [10]
+#>    wk_beg_d   wk_end_d   holiday_names holiday_flag
+#>    <date>     <date>     <chr>                <dbl>
+#>  1 2014-12-28 2015-01-03 NewYearsDay              1
+#>  2 2015-01-04 2015-01-10 NoHoliday                0
+#>  3 2015-01-11 2015-01-17 NoHoliday                0
+#>  4 2015-01-18 2015-01-24 MlkDay                   1
+#>  5 2015-01-25 2015-01-31 NoHoliday                0
+#>  6 2015-02-01 2015-02-07 SuperBowl                1
+#>  7 2015-02-08 2015-02-14 ValentinesDay            1
+#>  8 2015-02-15 2015-02-21 NoHoliday                0
+#>  9 2015-02-22 2015-02-28 NoHoliday                0
+#> 10 2015-03-01 2015-03-07 NoHoliday                0
 ```
 
 **NOTE:** For those days/weels when there is no holiday the value for

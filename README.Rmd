@@ -47,7 +47,7 @@ date.
 
 library(holiday.dates)
 
-days_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2020-01-01'), by = 'day'))
+days_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2025-01-01'), by = 'day'))
 
 holiday_data(df = days_df, out_df = "days") %>% head(10)
 ```
@@ -59,7 +59,7 @@ first row relates to the first 7 rows in the data frame above.
 ```{r example}
 library(holiday.dates)
 
-weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2020-01-01'), by = 'week'))
+weeks_df <- tibble::tibble(weeks = seq.Date(as.Date('2015-01-01'), as.Date('2025-01-01'), by = 'week'))
 
 holiday_data(df = weeks_df, out_df = "week") %>% head(10)
 ```
