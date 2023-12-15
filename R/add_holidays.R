@@ -36,7 +36,7 @@ USValentinesDay <-
 #' @rdname add_holidays
 USSuperBowl <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 2, 7, 1)
+    ans = timeDate::.nth.of.nday(year, 2, 7, 1)
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
@@ -52,7 +52,7 @@ USSaintPatricksDay <-
 #' @rdname add_holidays
 USMothersDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 5, 7, 2)
+    ans = timeDate::.nth.of.nday(year, 5, 7, 2)
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
@@ -60,7 +60,7 @@ USMothersDay <-
 #' @rdname add_holidays
 USFathersDay <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 6, 7, 3)
+    ans = timeDate::.nth.of.nday(year, 6, 7, 3)
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
@@ -81,7 +81,7 @@ USCyberMonday <- function(year) { as.Date(timeDate::USThanksgivingDay(year)) + 4
 #' @rdname add_holidays
 USBack2School <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 8, 7, 2)
+    ans = timeDate::.nth.of.nday(year, 8, 7, 2)
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
@@ -89,7 +89,7 @@ USBack2School <-
 #' @rdname add_holidays
 USTgt_Cirle_Wk_Summer <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 7, 7, 2)
+    ans = timeDate::.nth.of.nday(year, 7, 7, 2)
     timeDate::timeDate(as.character(ans)) }
 
 #' @export
@@ -97,7 +97,7 @@ USTgt_Cirle_Wk_Summer <-
 #' @rdname add_holidays
 USTgt_Cirle_Wk_Fall <-
   function(year = timeDate::getRmetricsOptions("currentYear")) {
-    ans = .nth.of.nday(year, 10, 7, 1)
+    ans = timeDate::.nth.of.nday(year, 10, 7, 1)
     timeDate::timeDate(as.character(ans)) }
 
 ## New Retail Holiday Functions not in timeDate -------------------------------
